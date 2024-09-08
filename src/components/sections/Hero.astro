@@ -1,0 +1,55 @@
+<section class="hero-container">
+  <div class="gradient-to-right"></div>
+  <div class="gradient-from-bottom"></div>
+  <div class="relative pl-[141px]">
+    <div class="flex flex-col lg:flex-row justify-between">
+      <!-- Left column -->
+      <div class="lg:w-1/2">
+        <p class="text-4xl md:text-[82px] leading-none mb-12">
+          Soluciones <br />
+          <span class="font-semibold">únicas para</span>
+          <br />
+          <span class="text-orange-500 font-semibold">grandes ideas</span>
+        </p>
+        <div class="flex mb-6">
+          <img src="assets/icons/calendar-btn.svg" width="64" height="64" alt="calendar button">
+          <span class="text-xl mt-3">Agendar consultoría gratis</span>
+        </div>
+        <p class="text-gray-300 text-xl mb-8 max-w-md">
+          Somos los expertos en diseño y desarrollo <br>
+          de productos digitales que te ayudarán a <br>
+          alcanzar tus objetivos de negocio.
+        </p>
+      </div>
+
+      <!-- Right column -->
+      <div class="lg:w-1/2">
+        <img
+          src="images/hero-iphone.png"
+          alt="Smartphone with lightbulb"
+          class="w-[526px] h-auto rounded-lg shadow-lg"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-container {
+    @apply md:pt-[228px] bg-midnight-800 text-white relative;
+    background-image: url("/images/hero-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top 0 right -30vh;
+  }
+
+  .gradient-to-right {
+    @apply absolute top-0 bottom-0 w-3/4;
+    @apply bg-gradient-to-r from-midnight-800 from-30% to-transparent;
+  }
+
+  .gradient-from-bottom {
+    @apply absolute bottom-0 left-0 right-0 h-14;
+    @apply bg-gradient-to-t from-midnight-800 to-transparent;
+  }
+</style>
