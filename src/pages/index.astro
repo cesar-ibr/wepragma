@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/sections/Header.astro";
+import Hero from "../components/sections/Hero.astro";
+import About from "../components/sections/About.astro";
+import Services from "../components/sections/Services.astro";
+import Projects from "../components/sections/Projects.astro";
+import ValueProposal from "../components/sections/ValueProposal.astro";
+import ContactForm from "../components/sections/ContactForm.astro";
+import Footer from "../components/sections/Footer.astro";
+---
+
+<Layout title="Pragma | Desarrollo de Productos Digitales">
+  <Header />
+  <Hero />
+  <!-- Trusted by section -->
+  <div class="pt-16 bg-midnight-800">
+    <p class="text-center text-gray-400 mb-6">
+      Empresas y startups que han confiado en nosotros
+    </p>
+    <div class="flex flex-wrap justify-center items-center gap-8">
+      <img src="images/fictional-com-1.png" alt="Boltshift" class="h-8" />
+      <img src="images/fictional-com-2.png" alt="Lightbox" class="h-8" />
+      <img src="images/fictional-com-3.png" alt="FeatherDev" class="h-8" />
+      <img src="images/fictional-com-4.png" alt="Boltshift" class="h-8" />
+      <img src="images/fictional-com-5.png" alt="Lightbox" class="h-8" />
+      <img src="images/fictional-com-6.png" alt="Lightbox" class="h-8" />
+    </div>
+  </div>
+  <About />
+  <Services />
+  <Projects />
+  <ValueProposal />
+  <ContactForm />
+  <Footer />
+</Layout>
