@@ -12,73 +12,42 @@
         <div class="relative">
           <div class="absolute top-0 left-0 w-16 h-0.5 bg-[#5e6082] mt-3"></div>
           <div class="pl-20">
-            <p class="text-gray-500 mb-4">
+            <p class="text-midnight-500 mb-4">
               Porque somos más que una agencia de diseño y desarrollo. Somos tus
               aliados estratégicos en el camino hacia el éxito digital.
             </p>
-            <p class="text-gray-500 mb-6">
-              Te ofrecemos un servicio boutique integral que incluye desde la
-              concepción y creación de tu idea o proyecto, hasta el lanzamiento
+            <p class="text-midnight-500 mb-6">
+              <b>Te ofrecemos un servicio boutique integral</b> que incluye desde
+              la concepción y creación de tu idea o proyecto, hasta el lanzamiento
               y mantenimiento de tu producto digital.
             </p>
             <a
-              href="#"
-              class="inline-flex items-center text-midnight-500 hover:text-orange-600 transition-colors duration-200"
-            >
-              Conocer más
-              <div
-                class="gradient-border w-12 h-12 flex items-center justify-center shadow-lg ml-4"
-              >
-                <svg
-                  class="w-6 h-6 text-blue-900"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 12H19M19 12L12 5M19 12L12 19"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                </svg>
-              </div>
-            </a>
+            href="#"
+            class="inline-flex items-center text-midnight-500 hover:text-orange-600 transition-colors duration-200"
+          >
+            <div class="flex items-center mb-6">
+              <span class="text-xl mr-4">Conocer más</span>
+              <img
+                src="assets/icons/flecha.svg"
+                width="40"
+                height="40"
+                alt="button"
+              />
+            </div>
+          </a>          
           </div>
         </div>
       </div>
       <!-- Right column -->
       <div class="lg:w-1/2">
-        <div class="overflow-hidden">
+        <div class="p-8">
           <img
             src="images/iphone-horizontal.png"
             alt="Digital product development"
-            class="w-full h-auto object-cover"
+            class="w-full h-auto object-contain"
           />
         </div>
       </div>
     </div>
   </div>
-
-  <style>
-    .gradient-border {
-      position: relative;
-      border-radius: 50%;
-      background: linear-gradient(0deg, white 25%, #ffa879 50%, #ff8e50 75%);
-    }
-    .gradient-border::before {
-      content: "";
-      position: absolute;
-      top: 1px;
-      right: 1px;
-      bottom: 1px;
-      left: 1px;
-      background: white;
-      border-radius: 50%;
-    }
-    .gradient-border svg {
-      position: relative;
-      z-index: 1;
-    }
-  </style>
 </section>

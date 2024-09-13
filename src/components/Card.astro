@@ -1,61 +1,60 @@
 ---
 interface Props {
 	title: string;
-	body: string;
-	href: string;
+	description: string;
+	imageUrl: string;
+	features: string[];
 }
 
-const { href, title, body } = Astro.props;
+const { title, description, imageUrl, features } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
-</style>
+<div class="bg-white rounded-3xl overflow-hidden shadow-lg orange-gradient">
+	<div class="p-6 md:p-8 flex flex-col md:flex-row">
+		<div class="md:w-1/2 mb-6 md:mb-0 md:mr-8">
+			<img
+				src={imageUrl}
+				alt={title}
+				class="rounded-2xl w-full h-auto object-cover"
+			/>
+		</div>
+		<div class="md:w-1/2">
+			<h3 class="text-2xl font-bold text-midnight-800 mb-4">{title}</h3>
+			<p class="text-gray-400 mb-6">{description}</p>
+			<ul class="space-y-2 mb-6">
+				{
+					features.map((feature) => (
+						<li class="flex items-center text-midnight-500">
+							<svg
+								class="w-5 h-5 mr-2 text-orange-600"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+									clip-rule="evenodd"
+								/>
+							</svg>
+							{feature}
+						</li>
+					))
+				}
+			</ul>
+			<a
+            href="#"
+            class="inline-flex items-center text-midnight-500 hover:text-orange-600 transition-colors duration-200"
+          >
+            <div class="flex items-center mb-6">
+              <span class="text-xl mr-4">Conocer más</span>
+              <img
+                src="assets/icons/flecha.svg"
+                width="40"
+                height="40"
+                alt="button"
+              />
+            </div>
+          </a>        
+		</div>
+	</div>
+</div>
