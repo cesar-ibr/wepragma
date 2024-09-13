@@ -30,7 +30,7 @@ const cards: CardData[] = [
 ];
 ---
 
-<div class="carousel">
+<div class="carousel pt-20">
   <div class="carousel-container">
     {cards.map((card, index) => (
       <div class="carousel-slide" data-index={index}>
@@ -47,8 +47,9 @@ const cards: CardData[] = [
 <style>
   .carousel {
     position: relative;
-    width: 100%;
+    width: 80%;
     overflow: hidden;
+    margin: 0 auto;
   }
   .carousel-container {
     display: flex;
@@ -57,7 +58,7 @@ const cards: CardData[] = [
   .carousel-slide {
     flex: 0 0 100%;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
   }
   .carousel-slide.active {
     opacity: 1;
