@@ -1,14 +1,10 @@
-<header
-  id="navheader"
-  class="fixed z-10 w-full backdrop-blur text-sky-100 px-20 py-5"
->
+<header id="navheader" class="fixed top-0 z-50 w-full backdrop-blur text-sky-100 px-20 py-5 transition-colors duration-300">
   <div class="container mx-auto flex items-center justify-end">
     <div class="flex items-center mr-auto">
       <img src="/logo.svg" alt="Wepragma Logo" class="h-auto w-[173px]" />
     </div>
 
     <nav id="menu" data-open="false" class="flex items-center space-x-6">
-      <!-- Toggle Language -->
       <div
         class="flex space-x-2 border bg-midnight-500 border-white/10 rounded-[28px] p-2"
       >
@@ -70,47 +66,57 @@
 </header>
 
 <script>
-  /* Toggle Navbar Background */
   const threshold = 200;
   const navHeader = document.getElementById("navheader");
 
   window.addEventListener("scroll", () => {
-    // get the current scroll position
     const scrollPosition = window.scrollY;
-
-    // if the scroll position is greater than the threshold add background color
     if (scrollPosition > threshold) {
       navHeader.classList.add("bg-midnight-500/90");
     } else {
-      // remove the background color
       navHeader.classList.remove("bg-midnight-500/90");
     }
   });
 
-  /* Toggle Navbar Menu */
   const menu = document.getElementById("menu");
+  const menuOptions = document.getElementById("menu-options");
   const toggleMenu = document.getElementById("toggle-menu");
 
   toggleMenu.addEventListener("click", () => {
-    // get the current state of the menu
     const isOpen = menu.getAttribute("data-open") === "true";
-
-    // toggle the menu state
     menu.setAttribute("data-open", String(!isOpen));
+
+
+    if (!isOpen) {
+      menuOptions.style.opacity = "1";
+      menuOptions.style.visibility = "visible";
+      menuOptions.style.transform = "translateX(0)";
+    } else {
+      menuOptions.style.opacity = "0";
+      menuOptions.style.visibility = "hidden";
+      menuOptions.style.transform = "translateX(-100%)";
+    }
   });
 </script>
-
 <style>
-  /* When #menu data-open is "false" hide #menu-options */
-  #menu[data-open="false"] #menu-options {
-    display: none;
-  }
+#menu-options {
+  transition: transform 0.5s ease;
+  transform: translateX(-100%);
+}
+#menu[data-open="false"] #menu-options {
+  display: none;
+  transform: translateY(-100%);
+}
 
-  #menu[data-open="true"] #toggle-menu .menu-icon {
-    display: none;
-  }
+#menu[data-open="true"] #menu-options {
+  display: flex;
+  transform: translateY(0); 
+}
+#menu[data-open="true"] #toggle-menu .menu-icon {
+  display: none;
+}
 
-  #menu[data-open="false"] #toggle-menu .close-icon {
-    display: none;
-  }
+#menu[data-open="false"] #toggle-menu .close-icon {
+  display: none;
+}
 </style>
