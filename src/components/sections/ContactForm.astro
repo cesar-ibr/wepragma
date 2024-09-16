@@ -1,35 +1,38 @@
-<section class="bg-sky-100">
-  <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-10">
+<section class="py-12 px-4">
+  <div
+    class="mx-20 my-32 bg-white rounded-lg shadow-lg overflow-hidden py-16 px-16"
+  >
     <div class="flex flex-col md:flex-row">
       <div class="md:w-1/2">
         <img
           src="/images/man-woman-working.jpeg"
-          alt="Man and woman working"
-          class="rounded-lg"
+          alt="Hombre y mujer trabajando"
+          class="w-full h-full object-cover rounded-lg"
         />
       </div>
-      <div class="md:w-1/2 md:pl-10 flex flex-col justify-center mt-6 md:mt-0">
+      <div class="md:w-1/2 px-16">
         <h2 class="text-3xl font-bold text-midnight-500 mb-4">
           ¿Listo para empezar?
         </h2>
-        <p class="text-gray-500 mb-6">
+        <p class="text-gray-600 mb-6">
           Si estás preparado para transformar tu marca de forma definitiva, <span
             class="text-midnight-500 font-bold"
-            >¡no dudes en contactarnos hoy mismo!</span>
+            >¡no dudes en contactarnos hoy mismo!</span
+          >
         </p>
         <form action="#" method="POST">
           <div class="mb-4">
-            <label for="name" class="block text-gray-500 mb-1">Nombre</label>
+            <label for="name" class="block text-gray-600 mb-1">Nombre</label>
             <input
               type="text"
               id="name"
               name="name"
               placeholder="Ingresa tu nombre"
-              class="w-full p-3 border border-gray-blue-200 rounded-lg"
+              class="w-full p-3 border border-gray-300 rounded-lg"
             />
           </div>
           <div class="mb-4">
-            <label for="email" class="block text-gray-500 mb-1"
+            <label for="email" class="block text-gray-600 mb-1"
               >Correo electrónico</label
             >
             <input
@@ -37,26 +40,37 @@
               id="email"
               name="email"
               placeholder="you@company.com"
-              class="w-full p-3 border border-gray-blue-200 rounded-lg"
+              class="w-full p-3 border border-gray-300 rounded-lg"
             />
           </div>
-          <div class="mb-4">
-            <label for="message" class="block text-gray-500 mb-1">Mensaje</label
+          <div class="mb-6">
+            <label for="message" class="block text-gray-600 mb-1">Mensaje</label
             >
             <textarea
               id="message"
               name="message"
               placeholder="Déjanos un mensaje..."
-              class="w-full p-3 border border-gray-blue-200 rounded-lg h-32"
+              class="w-full p-3 border border-gray-300 rounded-lg h-32"
             ></textarea>
           </div>
           <button
-            type="submit"
-            class="w-full p-3 bg-midnight-500 text-white rounded-lg hover:bg-midnight-800 transition"
-            >Enviar mensaje</button
-          >
+          type="submit"
+          class="w-full p-3 bg-midnight-500 text-white rounded-full relative
+                 border-4"
+        >
+          Enviar mensaje
+        </button>
         </form>
       </div>
     </div>
   </div>
 </section>
+<style>
+  body {
+    background-color: white;
+    background-image: url("/images/111.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+</style>
