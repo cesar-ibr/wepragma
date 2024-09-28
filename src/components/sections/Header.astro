@@ -68,54 +68,55 @@
 
 
 <script>
-  const threshold = 200;
-  const navHeader = document.getElementById("navheader");
-  const menu = document.getElementById("menu");
-  const menuOptions = document.getElementById("menu-options");
-  const toggleMenu = document.getElementById("toggle-menu");
+ const threshold = 200;
+const navHeader = document.getElementById("navheader");
+const menu = document.getElementById("menu");
+const menuOptions = document.getElementById("menu-options");
+const toggleMenu = document.getElementById("toggle-menu");
 
-  window.addEventListener("scroll", () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > threshold) {
-          navHeader.classList.add("bg-midnight-500/90");
-      } else {
-          navHeader.classList.remove("bg-midnight-500/90");
-      }
-  });
+window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > threshold) {
+        navHeader.classList.add("bg-midnight-500/90");
+    } else {
+        navHeader.classList.remove("bg-midnight-500/90");
+    }
+});
 
-  toggleMenu.addEventListener("click", () => {
-      const isOpen = menu.getAttribute("data-open") === "true";
-      menu.setAttribute("data-open", String(!isOpen));
-      
-      if (!isOpen) {
-          menuOptions.style.transform = "translateX(0)";
-      } else {
-          menuOptions.style.transform = "translateX(100%)";
-      }
-  });
+toggleMenu.addEventListener("click", () => {
+    const isOpen = menu.getAttribute("data-open") === "true";
+    menu.setAttribute("data-open", String(!isOpen)); 
+});
+
 </script>
 <style>
-  #menu-options {
-    transition: transform 0.7s ease, opacity 0.7s ease; 
-    transform: translateX(100%);  
-    opacity: 0;  
-    pointer-events: none; 
-  }
-  #menu[data-open="false"] #menu-options {
-    transform: translateX(100%); 
-    opacity: 0;
-    pointer-events: none; 
-  }
-  #menu[data-open="true"] #menu-options {
-    transform: translateX(0); 
-    opacity: 1; 
-    pointer-events: auto;  
-  }
-  #menu[data-open="true"] #toggle-menu .menu-icon {
-    display: none;
-  }
-  #menu[data-open="false"] #toggle-menu .close-icon {
-    display: none;
-  }
+#menu-options {
+  transform: scaleX(0);
+  transform-origin: top right; 
+  transition: transform 2s ease, opacity 2s ease; 
+  opacity: 0;  
+  pointer-events: none; 
+}
+
+#menu[data-open="false"] #menu-options {
+  transform: scaleX(0); 
+  opacity: 0;
+  pointer-events: none; 
+}
+
+#menu[data-open="true"] #menu-options {
+  transform: scaleX(1); 
+  opacity: 1; 
+  pointer-events: auto;  
+}
+
+#menu[data-open="true"] #toggle-menu .menu-icon {
+  display: none;
+}
+
+#menu[data-open="false"] #toggle-menu .close-icon {
+  display: none;
+}
+
   </style>
   
