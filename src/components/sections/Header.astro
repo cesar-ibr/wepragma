@@ -23,6 +23,7 @@
         id="menu-options"
         class="hidden md:flex items-center rounded-[36px] border border-white/10 px-6 py-3 space-x-8"
       >
+    
         <a href="#" class="text-orange-500">Inicio</a>
         <div class="relative group">
           <a href="#" class="flex items-center hover:text-orange-500">
@@ -65,58 +66,56 @@
   </div>
 </header>
 
+
 <script>
   const threshold = 200;
   const navHeader = document.getElementById("navheader");
-
-  window.addEventListener("scroll", () => {
-    const scrollPosition = window.scrollY;
-    if (scrollPosition > threshold) {
-      navHeader.classList.add("bg-midnight-500/90");
-    } else {
-      navHeader.classList.remove("bg-midnight-500/90");
-    }
-  });
-
   const menu = document.getElementById("menu");
   const menuOptions = document.getElementById("menu-options");
   const toggleMenu = document.getElementById("toggle-menu");
 
+  window.addEventListener("scroll", () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > threshold) {
+          navHeader.classList.add("bg-midnight-500/90");
+      } else {
+          navHeader.classList.remove("bg-midnight-500/90");
+      }
+  });
+
   toggleMenu.addEventListener("click", () => {
-    const isOpen = menu.getAttribute("data-open") === "true";
-    menu.setAttribute("data-open", String(!isOpen));
-
-
-    if (!isOpen) {
-      menuOptions.style.opacity = "1";
-      menuOptions.style.visibility = "visible";
-      menuOptions.style.transform = "translateX(0)";
-    } else {
-      menuOptions.style.opacity = "0";
-      menuOptions.style.visibility = "hidden";
-      menuOptions.style.transform = "translateX(-100%)";
-    }
+      const isOpen = menu.getAttribute("data-open") === "true";
+      menu.setAttribute("data-open", String(!isOpen));
+      
+      if (!isOpen) {
+          menuOptions.style.transform = "translateX(0)";
+      } else {
+          menuOptions.style.transform = "translateX(100%)";
+      }
   });
 </script>
 <style>
-#menu-options {
-  transition: transform 0.5s ease;
-  transform: translateX(-100%);
-}
-#menu[data-open="false"] #menu-options {
-  display: none;
-  transform: translateY(-100%);
-}
-
-#menu[data-open="true"] #menu-options {
-  display: flex;
-  transform: translateY(0); 
-}
-#menu[data-open="true"] #toggle-menu .menu-icon {
-  display: none;
-}
-
-#menu[data-open="false"] #toggle-menu .close-icon {
-  display: none;
-}
-</style>
+  #menu-options {
+    transition: transform 0.7s ease, opacity 0.7s ease; 
+    transform: translateX(100%);  
+    opacity: 0;  
+    pointer-events: none; 
+  }
+  #menu[data-open="false"] #menu-options {
+    transform: translateX(100%); 
+    opacity: 0;
+    pointer-events: none; 
+  }
+  #menu[data-open="true"] #menu-options {
+    transform: translateX(0); 
+    opacity: 1; 
+    pointer-events: auto;  
+  }
+  #menu[data-open="true"] #toggle-menu .menu-icon {
+    display: none;
+  }
+  #menu[data-open="false"] #toggle-menu .close-icon {
+    display: none;
+  }
+  </style>
+  

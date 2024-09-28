@@ -1,10 +1,9 @@
 ---
-import Card from '../Card.astro';
 import Carousel from '../Carousel.astro';
 ---
-<section class="section-container py-16 relative overflow-hidden pt-[116px] pb-32">
+<section class="bg-[url('/images/Background.png')] bg-midnight-800 bg-no-repeat bg-cover bg-bottom py-16 relative overflow-hidden pt-[116px] pb-32">
   <div
-    class="absolute top-40 left-1/2 transform -translate-x-1/2 text-white text-opacity-[0.07] text-[5rem] font-bold whitespace-nowrap leading-none"
+    class="absolute top-48 left-1/2 transform -translate-x-1/2 text-white text-opacity-[0.07] text-[5rem] font-bold whitespace-nowrap leading-none"
   >
     Nuestros servicios
   </div>
@@ -22,13 +21,4 @@ import Carousel from '../Carousel.astro';
       objetivos de negocio.
     </p>
 <Carousel />
-  <style>
-      .section-container {
-    @apply md:pt-[60px] bg-midnight-800 text-white relative;
-    background-image: url("/images/Background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom center;
-  } 
-  </style>
 </section>
