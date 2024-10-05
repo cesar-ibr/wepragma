@@ -1,5 +1,5 @@
 ---
-import Card from "./Card.astro"
+import Card from "./Card.astro";
 
 interface CardData {
   title: string;
@@ -10,33 +10,50 @@ interface CardData {
 
 const cards: CardData[] = [
   {
-    title: 'Diseño de páginas Webs y aplicaciones móviles',
-    description: 'Desarrollamos o rediseñamos tu sitio web enfocados en mejorar la experiencia del usuario (UX) para aumentar la visibilidad en línea, la interacción del usuario y la tasa de conversión.',
-    imageUrl: '/images/carrusel1.png',
-    features: ['Diseño web orientado al usuario', 'Comercio electrónico', 'Plataformas personalizadas']
+    title: "Diseño de páginas Webs y aplicaciones móviles",
+    description:
+      "Desarrollamos o rediseñamos tu sitio web enfocados en mejorar la experiencia del usuario (UX) para aumentar la visibilidad en línea, la interacción del usuario y la tasa de conversión.",
+    imageUrl: "/images/carrusel1.png",
+    features: [
+      "Diseño web orientado al usuario",
+      "Comercio electrónico",
+      "Plataformas personalizadas",
+    ],
   },
   {
-    title: 'Diseño de experiencia de usuario (UX/UI)',
-    description: 'Un buen diseño de productos digitales (UX/UI) es aquel que cumple con su función designada. Desde la funcionalidad hasta la satisfacción, este es un camino que recorreremos juntos de principio a fin.',
-    imageUrl: '/images/carrusel2.png',
-    features: ['Diseño de experiencia e interfaz de usuario', 'Consultoría UX/UI', 'Sistemas de diseño']
+    title: "Diseño de experiencia de usuario (UX/UI)",
+    description:
+      "Un buen diseño de productos digitales (UX/UI) es aquel que cumple con su función designada. Desde la funcionalidad hasta la satisfacción, este es un camino que recorreremos juntos de principio a fin.",
+    imageUrl: "/images/carrusel2.png",
+    features: [
+      "Diseño de experiencia e interfaz de usuario",
+      "Consultoría UX/UI",
+      "Sistemas de diseño",
+    ],
   },
   {
-    title: 'Diseño de identidad de marca (Branding)',
-    description: 'Con nuestro servicio de diseño de marca e identidad, podrás crear una imagen única y memorable que permita a tu marca destacar en el mercado y refleje los valores y la esencia de tu empresa.',
-    imageUrl: '/images/carrusel3.png',
-    features: ['Diseño y concepto de marca', 'Creación de contenido', 'Anuncios publicitarios']
-  }
+    title: "Diseño de identidad de marca (Branding)",
+    description:
+      "Con nuestro servicio de diseño de marca e identidad, podrás crear una imagen única y memorable que permita a tu marca destacar en el mercado y refleje los valores y la esencia de tu empresa.",
+    imageUrl: "/images/carrusel3.png",
+    features: [
+      "Diseño y concepto de marca",
+      "Creación de contenido",
+      "Anuncios publicitarios",
+    ],
+  },
 ];
 ---
 
 <div class="carousel pt-20">
   <div class="carousel-container">
-    {cards.map((card, index) => (
-      <div class="carousel-slide" data-index={index}>
-        <Card {...card} />
-      </div>
-    ))}
+    {
+      cards.map((card, index) => (
+        <div class="carousel-slide" data-index={index}>
+          <Card {...card} />
+        </div>
+      ))
+    }
   </div>
   <div class="carousel-controls">
     <button class="carousel-prev" aria-label="Anterior">&lt;</button>
@@ -72,7 +89,8 @@ const cards: CardData[] = [
     justify-content: space-between;
     padding: 0 20px;
   }
-  .carousel-prev, .carousel-next {
+  .carousel-prev,
+  .carousel-next {
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
@@ -85,15 +103,17 @@ const cards: CardData[] = [
 
 <script>
   function setupCarousel() {
-    const container = document.querySelector('.carousel-container') as HTMLElement;
-    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
-    const prevBtn = document.querySelector('.carousel-prev');
-    const nextBtn = document.querySelector('.carousel-next');
+    const container = document.querySelector(
+      ".carousel-container",
+    ) as HTMLElement;
+    const slides = Array.from(document.querySelectorAll(".carousel-slide"));
+    const prevBtn = document.querySelector(".carousel-prev");
+    const nextBtn = document.querySelector(".carousel-next");
     let currentIndex = 0;
 
     function showSlide(index: number) {
       slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
+        slide.classList.toggle("active", i === index);
       });
       if (container) {
         container.style.transform = `translateX(-${index * 100}%)`;
@@ -105,12 +125,12 @@ const cards: CardData[] = [
       showSlide(currentIndex);
     }
 
-    prevBtn?.addEventListener('click', () => moveSlide(-1));
-    nextBtn?.addEventListener('click', () => moveSlide(1));
+    prevBtn?.addEventListener("click", () => moveSlide(-1));
+    nextBtn?.addEventListener("click", () => moveSlide(1));
 
     showSlide(currentIndex);
   }
 
   setupCarousel();
-  document.addEventListener('astro:after-swap', setupCarousel);
+  document.addEventListener("astro:after-swap", setupCarousel);
 </script>

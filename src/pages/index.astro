@@ -18,7 +18,7 @@ import Footer from "../components/sections/Footer.astro";
     <p class="text-center text-white mb-8">
       Empresas y startups que han confiado en nosotros
     </p>
-    <div class="flex flex-wrap justify-center items-center gap-8 ">
+    <div class="flex flex-wrap justify-center items-center gap-8">
       <img src="images/fictional-com-1.png" alt="Boltshift" class="h-8" />
       <img src="images/fictional-com-2.png" alt="Lightbox" class="h-8" />
       <img src="images/fictional-com-3.png" alt="FeatherDev" class="h-8" />
@@ -34,10 +34,18 @@ import Footer from "../components/sections/Footer.astro";
   <ContactForm />
   <Footer />
   <style>
- .orange-gradient {
-  border-image: linear-gradient(to right, #03051b, #03051b 20%, #dd6f3a 50%, #03051b 80%, #03051b) 1;
-  border-width: 1px;
-  border-style: solid;
-}
+    .orange-gradient {
+      border-image: linear-gradient(
+          to right,
+          #03051b,
+          #03051b 20%,
+          #dd6f3a 50%,
+          #03051b 80%,
+          #03051b
+        )
+        1;
+      border-width: 1px;
+      border-style: solid;
+    }
   </style>
 </Layout>

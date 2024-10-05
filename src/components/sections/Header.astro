@@ -1,4 +1,7 @@
-<header id="navheader" class="fixed top-0 z-50 w-full backdrop-blur text-sky-100 px-20 py-5 transition-colors duration-300">
+<header
+  id="navheader"
+  class="fixed top-0 z-50 w-full backdrop-blur text-sky-100 px-20 py-5 transition-colors duration-300"
+>
   <div class="container mx-auto flex items-center justify-end">
     <div class="flex items-center mr-auto">
       <img src="/logo.svg" alt="Wepragma Logo" class="h-auto w-[173px]" />
@@ -23,7 +26,6 @@
         id="menu-options"
         class="hidden md:flex items-center rounded-[36px] border border-white/10 px-6 py-3 space-x-8"
       >
-    
         <a href="#" class="text-orange-500">Inicio</a>
         <div class="relative group">
           <a href="#" class="flex items-center hover:text-orange-500">
@@ -54,7 +56,12 @@
         id="toggle-menu"
         class="hover:bg-orange-500 text-white px-4 py-4 rounded-full bg-orange-600"
       >
-        <img src="assets/icons/close.svg" class="close-icon" width="12" alt="close icon">
+        <img
+          src="assets/icons/close.svg"
+          class="close-icon"
+          width="12"
+          alt="close icon"
+        />
         <img
           src="assets/icons/menu.svg"
           class="menu-icon my-[1px]"
@@ -66,57 +73,55 @@
   </div>
 </header>
 
-
 <script>
- const threshold = 200;
-const navHeader = document.getElementById("navheader");
-const menu = document.getElementById("menu");
-const menuOptions = document.getElementById("menu-options");
-const toggleMenu = document.getElementById("toggle-menu");
+  const threshold = 200;
+  const navHeader = document.getElementById("navheader");
+  const menu = document.getElementById("menu");
+  const menuOptions = document.getElementById("menu-options");
+  const toggleMenu = document.getElementById("toggle-menu");
 
-window.addEventListener("scroll", () => {
+  window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY;
     if (scrollPosition > threshold) {
-        navHeader.classList.add("bg-midnight-500/90");
+      navHeader.classList.add("bg-midnight-500/90");
     } else {
-        navHeader.classList.remove("bg-midnight-500/90");
+      navHeader.classList.remove("bg-midnight-500/90");
     }
-});
+  });
 
-toggleMenu.addEventListener("click", () => {
+  toggleMenu.addEventListener("click", () => {
     const isOpen = menu.getAttribute("data-open") === "true";
-    menu.setAttribute("data-open", String(!isOpen)); 
-});
-
+    menu.setAttribute("data-open", String(!isOpen));
+  });
 </script>
 <style>
-#menu-options {
-  transform: scaleX(0);
-  transform-origin: top right; 
-  transition: transform 2s ease, opacity 2s ease; 
-  opacity: 0;  
-  pointer-events: none; 
-}
+  #menu-options {
+    transform: scaleX(0);
+    transform-origin: top right;
+    transition:
+      transform 2s ease,
+      opacity 2s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
 
-#menu[data-open="false"] #menu-options {
-  transform: scaleX(0); 
-  opacity: 0;
-  pointer-events: none; 
-}
+  #menu[data-open="false"] #menu-options {
+    transform: scaleX(0);
+    opacity: 0;
+    pointer-events: none;
+  }
 
-#menu[data-open="true"] #menu-options {
-  transform: scaleX(1); 
-  opacity: 1; 
-  pointer-events: auto;  
-}
+  #menu[data-open="true"] #menu-options {
+    transform: scaleX(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-#menu[data-open="true"] #toggle-menu .menu-icon {
-  display: none;
-}
+  #menu[data-open="true"] #toggle-menu .menu-icon {
+    display: none;
+  }
 
-#menu[data-open="false"] #toggle-menu .close-icon {
-  display: none;
-}
-
-  </style>
-  
+  #menu[data-open="false"] #toggle-menu .close-icon {
+    display: none;
+  }
+</style>
