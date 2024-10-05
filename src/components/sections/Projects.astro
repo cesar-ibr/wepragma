@@ -1,6 +1,6 @@
 <section class="bg-white py-16 px-28 relative">
   <div
-    class="absolute top-10 left-32 text-[#002266] text-opacity-[0.1] text-3xl md:text-[9rem] font-bold whitespace-nowrap leading-none z-0"
+    class="absolute top-10 left-32 text-[#002266] text-opacity-[0.1] text-3xl md:text-[9rem] font-bold transform whitespace-nowrap leading-none z-0"
   >
     Proyectos
   </div>
@@ -27,7 +27,9 @@
     class="h-[623px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 mb-12"
   >
     <!-- Greenfinch Group -->
-    <div class="bg-img1 overflow-hidden shadow-lg flex flex-col justify-end">
+    <div
+      class="bg-[url('/images/proyecto1.png')] bg-cover bg-center overflow-hidden shadow-lg flex flex-col justify-end"
+    >
       <div class="p-6 text-center">
         <p class="text-orange-500 text-sm mb-2">
           Diseño UX/UI - Desarrollo y Branding
@@ -40,7 +42,9 @@
     </div>
 
     <!-- Startup Macloud -->
-    <div class="bg-img2 overflow-hidden shadow-lg flex flex-col justify-end">
+    <div
+      class="bg-[url('/images/proyecto2.png')] bg-cover bg-center overflow-hidden shadow-lg flex flex-col justify-end"
+    >
       <div class="p-6 text-center">
         <p class="text-orange-500 text-sm mb-2">Diseño UX/UI y Branding</p>
         <h3 class="text-white text-xl font-semibold mb-2">Startup Macloud</h3>
@@ -51,7 +55,9 @@
     </div>
 
     <!-- Forma Foods -->
-    <div class="bg-img3 overflow-hidden shadow-lg flex flex-col justify-end">
+    <div
+      class="bg-[url('/images/proyecto3.png')] bg-cover bg-center overflow-hidden shadow-lg flex flex-col justify-end"
+    >
       <div class="p-6 text-center">
         <p class="text-orange-500 text-sm mb-2">Diseño UX/UI y Branding</p>
         <h3 class="text-white text-xl font-semibold mb-2">Forma Foods</h3>
@@ -62,7 +68,9 @@
     </div>
 
     <!-- Fintech Plerk -->
-    <div class="bg-img4 overflow-hidden shadow-lg flex flex-col justify-end">
+    <div
+      class="bg-[url('/images/proyecto4.png')] bg-cover bg-center overflow-hidden shadow-lg flex flex-col justify-end"
+    >
       <div class="p-6 text-center">
         <p class="text-orange-500 text-sm mb-2">Diseño UX/UI</p>
         <h3 class="text-white text-xl font-semibold mb-2">Fintech Plerk</h3>
@@ -72,15 +80,13 @@
       </div>
     </div>
   </div>
- 
-  
-  
+
   <div class="flex flex-col md:flex-row items-center">
     <h3 class="text-xl font-normal mr-8">
       <span>Hablamos con fluidez</span>
       <span class="block w-10 h-0.5 bg-orange-500 mt-1"></span>
     </h3>
-    <div class="flex flex-wrap ml-6 md:ml-4 gap-2 ">
+    <div class="flex flex-wrap ml-6 md:ml-4 gap-2">
       <div class="w-20 h-20 flex items-center justify-center">
         <img src="assets/icons/Pj1.svg" alt="Figma" />
       </div>
@@ -111,26 +117,3 @@
     </div>
   </div>
 </section>
-<style>
-  .bg-img1 {
-    background-image: url("/images/proyecto1.png");
-    background-size: cover;
-    background-position: center;
-  }
-  .bg-img2 {
-    background-image: url("/images/proyecto2.png");
-    background-size: cover;
-    background-position: center;
-  }
-  .bg-img3 {
-    background-image: url("/images/proyecto3.png");
-    background-size: cover;
-    background-position: center;
-  }
-  .bg-img4 {
-    background-image: url("/images/proyecto4.png");
-    background-size: cover;
-    background-position: center;
-  }
-
-</style>
