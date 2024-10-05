@@ -7,8 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "prettier": "prettier . --write",
-    "lint": "eslint --fix \"src/**/*.{js,astro}\"",
+    "lint": "biome check --write src",
+    "ci": "biome check src && astro check && astro build",
     "astro": "astro"
   },
   "dependencies": {
@@ -19,10 +19,7 @@
     "typescript": "^5.5.2"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^8.8.0",
-    "eslint": "^9.12.0",
-    "eslint-plugin-astro": "^1.2.4",
-    "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "@biomejs/biome": "^1.9.3",
+    "@typescript-eslint/parser": "^8.8.0"
   }
 }
