@@ -1,14 +1,17 @@
 <header
   id="navheader"
-  class="fixed z-10 w-full backdrop-blur text-sky-100 px-20 py-5"
+  class="fixed top-0 z-50 w-full backdrop-blur text-sky-100 px-20 py-5 transition-colors duration-300"
 >
   <div class="container mx-auto flex items-center justify-end">
     <div class="flex items-center mr-auto">
       <img src="/logo.svg" alt="Wepragma Logo" class="h-auto w-[173px]" />
     </div>
 
-    <nav id="menu" data-open="false" class="flex items-center space-x-6">
-      <!-- Toggle Language -->
+    <nav
+      id="menu"
+      data-open="false"
+      class="flex items-center justify-end space-x-6"
+    >
       <div
         class="flex space-x-2 border bg-midnight-500 border-white/10 rounded-[28px] p-2"
       >
@@ -25,31 +28,14 @@
       <!-- Menu options -->
       <div
         id="menu-options"
-        class="hidden md:flex items-center rounded-[36px] border border-white/10 px-6 py-3 space-x-8"
+        class="hidden transition-all duration-300 ease-in-out md:flex items-center rounded-[36px] border border-white/10 px-6 py-3 space-x-8"
       >
         <a href="#" class="text-orange-500">Inicio</a>
-        <div class="relative group">
-          <a href="#" class="flex items-center hover:text-orange-500">
-            Servicios
-            <svg
-              class="w-4 h-4 ml-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </a>
-          <!-- Dropdown menu can be added here -->
-        </div>
+        <a href="#" class="flex items-center hover:text-orange-500">Servicios</a
+        >
         <a href="#" class="hover:text-orange-500">Paquetes</a>
         <a href="#" class="hover:text-orange-500">Nosotros</a>
-        <a href="#" class="hover:text-orange-500">Para curiosos</a>
+        <a href="#" class="hover:text-orange-500">Curiosidades</a>
       </div>
 
       <!-- Toggle Button -->
@@ -57,7 +43,12 @@
         id="toggle-menu"
         class="hover:bg-orange-500 text-white px-4 py-4 rounded-full bg-orange-600"
       >
-        <img src="assets/icons/close.svg" class="close-icon" width="12" alt="close icon">
+        <img
+          src="assets/icons/close.svg"
+          class="close-icon"
+          width="12"
+          alt="close icon"
+        />
         <img
           src="assets/icons/menu.svg"
           class="menu-icon my-[1px]"
@@ -70,47 +61,52 @@
 </header>
 
 <script>
-  /* Toggle Navbar Background */
   const threshold = 200;
   const navHeader = document.getElementById("navheader");
+  const menu = document.getElementById("menu");
+  const toggleMenu = document.getElementById("toggle-menu");
 
   window.addEventListener("scroll", () => {
-    // get the current scroll position
     const scrollPosition = window.scrollY;
-
-    // if the scroll position is greater than the threshold add background color
     if (scrollPosition > threshold) {
       navHeader.classList.add("bg-midnight-500/90");
     } else {
-      // remove the background color
       navHeader.classList.remove("bg-midnight-500/90");
     }
   });
 
-  /* Toggle Navbar Menu */
-  const menu = document.getElementById("menu");
-  const toggleMenu = document.getElementById("toggle-menu");
-
   toggleMenu.addEventListener("click", () => {
-    // get the current state of the menu
     const isOpen = menu.getAttribute("data-open") === "true";
-
-    // toggle the menu state
     menu.setAttribute("data-open", String(!isOpen));
   });
 </script>
-
 <style>
-  /* When #menu data-open is "false" hide #menu-options */
-  #menu[data-open="false"] #menu-options {
-    display: none;
-  }
-
   #menu[data-open="true"] #toggle-menu .menu-icon {
     display: none;
   }
 
   #menu[data-open="false"] #toggle-menu .close-icon {
     display: none;
+  }
+
+  #menu-options {
+    transition: all 0.3s ease-in-out;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 0%;
+    max-width: 0;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+  }
+
+  #menu[data-open="true"] #menu-options {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 60%;
+    max-width: 500px;
+    overflow: auto;
+    border: solid 1px;
+    @apply px-6 py-3 border border-white/10;
   }
 </style>

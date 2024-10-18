@@ -7,6 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "lint": "biome check --write src",
+    "ci": "biome check src && astro check && astro build",
     "astro": "astro"
   },
   "dependencies": {
@@ -15,5 +17,9 @@
     "astro": "^4.11.0",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.3",
+    "@typescript-eslint/parser": "^8.8.0"
   }
 }

@@ -1,21 +1,21 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/sections/Header.astro";
-import Hero from "../components/sections/Hero.astro";
 import About from "../components/sections/About.astro";
-import Services from "../components/sections/Services.astro";
-import Projects from "../components/sections/Projects.astro";
-import ValueProposal from "../components/sections/ValueProposal.astro";
 import ContactForm from "../components/sections/ContactForm.astro";
 import Footer from "../components/sections/Footer.astro";
+import Header from "../components/sections/Header.astro";
+import Hero from "../components/sections/Hero.astro";
+import Projects from "../components/sections/Projects.astro";
+import Services from "../components/sections/Services.astro";
+import ValueProposal from "../components/sections/ValueProposal.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Pragma | Desarrollo de Productos Digitales">
   <Header />
   <Hero />
   <!-- Trusted by section -->
-  <div class="pt-16 bg-midnight-800">
-    <p class="text-center text-gray-400 mb-6">
+  <div class="pt-16 bg-midnight-800 pb-[72px] orange-gradient">
+    <p class="text-center text-white mb-8">
       Empresas y startups que han confiado en nosotros
     </p>
     <div class="flex flex-wrap justify-center items-center gap-8">
@@ -33,4 +33,19 @@ import Footer from "../components/sections/Footer.astro";
   <ValueProposal />
   <ContactForm />
   <Footer />
+  <style>
+    .orange-gradient {
+      border-image: linear-gradient(
+          to right,
+          #03051b,
+          #03051b 20%,
+          #dd6f3a 50%,
+          #03051b 80%,
+          #03051b
+        )
+        1;
+      border-width: 1px;
+      border-style: solid;
+    }
+  </style>
 </Layout>
