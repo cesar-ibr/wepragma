@@ -6,7 +6,7 @@ import Carousel from "../Carousel.astro";
   class="bg-[url('/images/Background.png')] bg-midnight-800 bg-no-repeat bg-cover bg-bottom py-16 relative overflow-hidden pt-[116px] pb-32"
 >
   <div
-    class="absolute top-48 left-1/2 transform -translate-x-1/2 text-white text-opacity-[0.07] text-[5rem] font-bold whitespace-nowrap leading-none"
+    class="hidden md:block absolute top-48 left-1/2 transform -translate-x-1/2 text-white text-opacity-[0.07] text-[5rem] font-bold whitespace-nowrap leading-none"
   >
     Nuestros servicios
   </div>
@@ -18,10 +18,8 @@ import Carousel from "../Carousel.astro";
     <h2 class="text-4xl md:text-5xl font-bold text-white text-center mb-4">
       Encuentra <span class="text-orange-500">soluciones</span> a tus necesidades
     </h2>
-    <p class="text-white text-center mb-12 max-w-2xl mx-auto">
-      Te ofrecemos una amplia gama de servicios para ayudarte a alcanzar tus
-      <br />
-      objetivos de negocio.
+    <p class="text-white text-center text-xl sm:pt-12 px-8 md:pt-0 max-w-2xl mx-auto ">
+      Te ofrecemos una amplia gama de servicios para ayudarte a alcanzar tus objetivos de negocio.
     </p>
     <Carousel />
   </div>
